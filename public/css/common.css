@@ -1,0 +1,82 @@
+@charset "utf-8";
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+@import url('https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css');
+/* Reset */
+
+html,body{width:100%;height:100%}
+html{overflow-y:scroll;font-size:14px;line-height:1.5}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,form,fieldset,p,button,input{margin:0;padding:0}
+body,h1,h2,h3,h4,h5,h6,a,input,button{
+font-family:'NanumSquareRound',"맑은 고딕",Malgun-Gothic,arial,Helvetica,AppleSDGothicNeo,sans-serif;
+font-size:16px;line-height:1.5;color:#111}
+body{background-color:#fff;word-break:break-all}
+img,fieldset,iframe{border:0 none;padding:0}
+li{list-style:none}
+input,select,button{vertical-align:middle}
+img{max-width:100%;max-height:100%;vertical-align:top}
+i,em,address{font-style:normal}
+label,button{cursor:pointer}
+button{margin:0;padding:0}
+a{text-decoration:none}
+button *{position:relative}
+button img{left:-3px;*left:auto}
+option{padding-right:6px}
+hr{display:none}
+legend{*width:0}
+table{border-collapse:collapse;border-spacing:0}
+input:focus, textarea:focus {outline:none}
+
+header,footer,nav,section,aside{
+	display:block;
+}
+/* clearfix */
+.clearfix {
+	*zoom: 1;
+}
+.clearfix:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+/* Hide */
+.blind, caption {
+	display: block;
+	position: absolute;
+	left: 0;
+	top: -9999em;
+}
+
+/* Skip */
+.skip a {
+	position: absolute;
+	left: 0;
+	top: -9999em;
+	z-index: 9999;
+	display: block;
+	width: 100%;
+	background-color: #666;
+	color: #eee;
+	font-family: ;
+	text-transform: uppercase;
+	text-decoration: none;
+	line-height: 30px;
+}
+
+.skip a:hover,
+.skip a:active,
+.skip a:focus {
+	top: 0;
+}
+
+.ta_l {text-align:left !important}
+.ta_r {text-align:right !important}
+.ta_c {text-align:center !important}
+
+.mb0 {margin-bottom:0 !important}
+.mt10 {margin-top:10px !important}
+.mt20 {margin-top:20px !important}
+.mt30 {margin-top:30px !important}
+.mb10 {margin-bottom:10px !important}
+.mb20 {margin-bottom:20px !important}
+.mb30 {margin-bottom:30px !important}

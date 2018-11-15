@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ROYALTYCOIN</title>
+    <!-- jquery -->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<!-- bootstrap -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<ul class="skip">
+    <li><a href="#content">내용 바로가기</a></li>
+    <li><a href="#gnb">주메뉴 바로가기</a></li>
+</ul>
+<div id="wrap">
+    <a href="#close" class="blackBG themeBG"><span class="blind">모바일 메뉴 닫기</span></a>
+    <header id="header">
+        <h1 id="logo"><a href="/"><img src="images/logo.png" alt="로얄티코인"></a></h1>
+        <ul class="sitemenu clearfix">
+            <% if(isAuthenticated){ %>
+              <li class="mobileHide usersty"><u><%= user.name %></u> 님</li>
+              <li class="mobileHide"><a href="/logout">로그아웃</a></li>
+              <% } else { %>
+            <li class="mobileHide"><a href="" data-toggle="modal" data-target="#login">로그인</a></li>
+            <!-- <li class="mobileHide"><a href="#login" onclick="javascript:popupOpen('pop_login'); return false;">login</a></li> -->
+            <li class="mobileHide"><a href="" data-toggle="modal" data-target="#signup">회원가입</a></li>
+            <!-- <li class="mobileHide"><a href="#join" onclick="javascript:popupOpen('pop_join'); return false;">register</a></li> -->
+            <% } %>
+
+            <li class="lang"><a href="#">한국어</a>
+                <div class="box">
+                    <ul>
+                        <li><a href="/">한국어</a></li>
+                        <li><a href="/en">English</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="mobileShow"><a href="#" id="mobileMenuOpen"><img src="images/btn_menu_open.png" alt="모바일 메뉴 열기"></a></li>
+        </ul>
+        <ul id="gnb" class="mobileHide">
+            <li><a href="#move" onclick="javascript:goSection(0, '#section3'); return false;">ABOUT</a></li>
+            <li><a href="#move" onclick="javascript:goSection(1, '#section4'); return false;">WHITE PAPER</a></li>
+            <li><a href="#move" onclick="javascript:goSection(2, '#section5'); return false;">ROAD MAP</a></li>
+            <li><a href="#move" onclick="javascript:goSection(3, '#section6'); return false;">TEAM</a></li>
+            <li><a href="#move" onclick="javascript:goSection(4, '#section9'); return false;">CONTACT US</a></li>
+        </ul>
+    </header>
+    <nav id="mGnbWrap">
+        <div class="box">
+            <h2 class="logo"><a href="/"><img src="images/logo.png" alt="로얄티코인"></a></h2>
+            <ul id="mGnb">
+                <li><a href="#move" onclick="javascript:goSection(0, '#section3'); return false;">ABOUT</a></li>
+				<li><a href="#move" onclick="javascript:goSection(1, '#section4'); return false;">WHITE PAPER</a></li>
+				<li><a href="#move" onclick="javascript:goSection(2, '#section5'); return false;">ROAD MAP</a></li>
+				<li><a href="#move" onclick="javascript:goSection(3, '#section6'); return false;">TEAM</a></li>
+				<li><a href="#move" onclick="javascript:goSection(4, '#section9'); return false;">CONTACT US</a></li>
+            </ul>
+            <ul class="utilmenu">
+                <% if(isAuthenticated){ %>
+                  <li class="usersty"><u><%= user.name %></u> 님</li>
+                  <li><a href="/logout">로그아웃</a></li>
+                  <% } else { %>
+                <!-- <li><a href="" data-toggle="modal" data-target="#login">로그인</a></li> -->
+                <li><a href="" data-toggle="modal" data-target="#login">로그인</a></li>
+                <!-- <li><a href="#login" onclick="javascript:popupOpen('pop_login'); return false;">login</a></li> -->
+                <li><a href="" data-toggle="modal" data-target="#signup">회원가입</a></li>
+                <!-- <li class="mobileHide"><a href="#join" onclick="javascript:popupOpen('pop_join'); return false;">register</a></li> -->
+                <% } %>
+            </ul>
+            <p class="btnClose"><a href="#" id="mobileMenuClose"><img src="images/btn_menu_close.png" alt="모바일 메뉴 닫기"></a></p>
+        </div>
+    </nav>
+    <div id="content">
+        <section id="section1" class="themeBG">
+           	<h3 class="blind">슬로건 영역</h3>
+            <div class="sectionGroup">
+                <p class="slogun">상상 나누기</p>
+                <p class="slogun themeFC">가치 곱하기</p>
+                <ul class="txtList">
+                    <li>상상의 캐릭터</li>
+                    <li>정당한 보상</li>
+                    <li>떳떳한 사용</li>
+                </ul>
+                <p class="btnMore"><a href="#move" onclick="javascript:goSection(0, '#section3'); return false;" class="themeBG2">more</a></p>
+            </div>
+        </section>
+        <section id="section2">
+            <div class="sectionGroup ta_c">
+                <p class="cloud cloud1"><img src="images/img_cloud1.png" alt=""></p>
+                <p class="cloud cloud2"><img src="images/img_cloud2.png" alt=""></p>
+                <p class="cloud cloud3"><img src="images/img_cloud3.png" alt=""></p>
+                <p class="cloud cloud4"><img src="images/img_cloud4.png" alt=""></p>
+                
+                <h4 class="title">세계 콘텐츠시장이 <br class="mobileShow2"><span class="themeFC">변화</span>하고 있습니다.</h4>
+                <p class="cont">
+                    <span class="mobileHide2">눈에 보이지 않는 무형자산의 가치가 승승장구하고 있습니다.<br>
+                    하지만 이 자산이 단지 보이지 않는다는 이유만으로 불법복제나 불공정한 수익배분 등 여러가지 문제를 안고 있습니다.<br></span>
+                    로열티코인에서는 창작자가 자신의 권리를<br class="mobileShow2"> 당당히 주장하고 소비자가 안심하고<br class="mobileShow2"> 거래할 수 있는 장을 제공합니다.
+                </p>
+            </div>
+        </section>
+        <section id="section3">
+            <div class="sectionGroup ta_c">
+                <h4 class="title"><span class="themeFC">로열티코인</span>이 바꾸는 유통생태계</h4>
+                <p class="cont">로열티코인은 창작자와 소비자, 투자자 모두에게<br>실질적인 도움을 줄 것 입니다.</p>
+                <ul class="circleList">
+                    <li>
+                        <p class="img"><img src="images/img_character1.png" alt="투명성"></p>
+                        <p class="tit">투명성</p>
+                        <p class="cont">블록체인 분산장부에 기록하여<br>위변조 불가능 저작권 신뢰를 보장함</p>
+                    </li>
+                    <li>
+                        <p class="img"><img src="images/img_character2.png" alt="공정성"></p>
+                        <p class="tit">공정성</p>
+                        <p class="cont">홍보와 유통에 기여 활동에 따라<br>수익이 공정하게 배분</p>
+                    </li>
+                    <li>
+                        <p class="img"><img src="images/img_character3.png" alt="효율성"></p>
+                        <p class="tit">효율성</p>
+                        <p class="cont">중재자 없는 계약으로<br class="mobileHide2">거래 시간 단축<br class="mobileShow2"> 유통 비용감소</p>
+                    </li>
+                </ul>
+                <div class="box">
+                    <p class="img mobileHide2"><img src="images/img_table.png" alt=""></p>
+                    <p class="img mobileShow2"><img src="images/img_table_m.png" alt=""></p>
+                    <ul class="dotList">
+                        <li>창작자는 콘텐츠 정보를 블록체인 장부에 기록하여 저작권을 증명 받습니다.</li>
+                        <li>구매자는 코인을 구매하여 제품을 돋보이고 홍보물에 사용할 수 있습니다.</li>
+                        <li>기여자는 콘텐츠에 대해 평가하거나 홍보, 유통하여 코인으로 보상 받습니다.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="section4">
+            <div class="left">
+                <ul>
+                    <li>
+                        <a href="static/royaltycoin_whitepaper_2.0.pdf" download>
+                            <p class="ico"><img src="images/icopaper.png" alt=""></p>
+                            <h5>White paper</h5>
+                            <p>Korean</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <p class="ico"><img src="images/ico_paper.png" alt=""></p>
+                            <h5>White paper</h5>
+                            <p>English</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="right">
+                <ul>
+                    <li>
+                        <a href="static/royaltycoin_summary_1.8.pdf" download>
+                            <p class="ico"><img src="images/ico_summary.png" alt=""></p>
+                            <h5>Summary</h5>
+                            <p>Korean</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <p class="ico"><img src="images/ico_summary.png" alt=""></p>
+                            <h5>Summary</h5>
+                            <p>English</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section id="section5" class="ta_c">
+            <h4 class="title">Road Map</h4>
+            <ul class="roadMap">
+                <li>
+                    <dl>
+                        <dt>2018 Q2</dt>
+                        <dd>로열티 그룹 설립</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>2018 Q3</dt>
+                        <dd>캐릭터 스톡 베타 런칭</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>2018 Q4</dt>
+                        <dd>로열티 토큰 배분 / 프리세일</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>2019 Q1</dt>
+                        <dd>로열티 토큰 퍼블릭 세일</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>2019 Q2</dt>
+                        <dd>로열티 토큰 Dapp 개발</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>2019 Q3</dt>
+                        <dd>알스토어 베타 예정</dd>
+                    </dl>
+                </li>
+            </ul>
+        </section>
+        <section id="section6">
+            <div class="sectionGroup ta_c">
+                <h4 class="title">Team</h4>
+                <ul class="teamList">
+                    <li class="wid2" style="widtt:20%">
+                        <div class="profile">
+                            <p class="img"><img src="images/img_team_01.jpg" alt=""></p>
+                            <div class="cont">
+                                <div>
+                                    <ul>
+                                        <li>코핀 커뮤니케이션즈 대표</li>
+                                        <li>전 골드만삭스 홍콩 글로벌투자팀</li>
+                                        <li>MIT Sloan 금융석사</li>
+                                        <li>미국 존스홉킨스 생명공학 석사</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="name">유영학</p>
+                        <p class="position">공동창립자</p>
+                    </li>
+                    <li>
+                        <div class="profile">
+                            <p class="img"><img src="images/img_team_02.jpg" alt=""></p>
+                            <div class="cont">
+                                <div>
+                                    <ul>
+                                        <li>캐드서브, 소통컴퍼니 대표</li>
+                                        <li>개미들연구소 운영자</li>
+                                        <li>블록체인스타트업협동조합 이사장</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="name">구대근</p>
+                        <p class="position">공동창립자</p>
+                    </li>
+                <!--    <li>
+                        <div class="profile">
+                            <p class="img"><img src="images/img_team_03.jpg" alt=""></p>
+                            <div class="cont">
+                                <div>
+                                    <ul>
+                                        <li>오픈블록체인 대표 컨설팅서비스 본부장</li>
+                                        <li>전 오라클 기술세일팀</li>
+                                        <li></li>
+                                        <li>전 한국 아이비엠 소프트웨어 컨설턴트</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="name">윤석빈</p>
+                        <p class="position">최고기술책임자</p>
+                    </li> -->
+               <!--     <li>
+                        <div class="profile">
+                            <p class="img"><img src="images/img_team_man.jpg" alt=""></p>
+                            <div class="cont">
+                                <div>
+                                    <ul>
+                                        <li>소통컴퍼니 개발 이사(블록체인, AI)</li>
+                                        <li>전 미국 알파봇 책임연구원</li>
+                                        <li></li>
+                                        <li>전 삼성에스원 융합보안연구소</li>
+                                        <li>전 연세대학 공과대학, 가천대 산학협력단 책임연구원</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="name">이장형</p>
+                        <p class="position">개발이사</p>
+                    </li> -->
+		    <li>
+	  		<div class="profile">
+	  		<p class="img"><img src="images/img_team_12.jpg" alt=""></p>
+	    		  <div class="cont">
+	      		    <div>
+	        		<ul>
+	          		  <li>Duobule Originals 대표이사</li>
+	          		  <li>E-Book(ePub) 암호화 DRM 솔루션 개발</li>
+	          		  <li>P2P 비트코인 지갑 구축</li>
+	          		  <li>P2P 유저간 VPN 자원공유 데몬 개발</li>
+	        		</ul>
+	      		    </div>
+	    		  </div>
+	  		</div>
+	  		<p class="name">김회승</p>
+	  		<p class="position">블록체인개발팀장</p>
+		    </li>
+                    <li>
+                        <div class="profile">
+                            <p class="img"><img src="images/img_team_04.jpg" alt=""></p>
+                            <div class="cont">
+                                <div>
+                                    <ul>
+                                        <li>소통컴퍼니 개발팀장</li>
+                                        <li>캐드서브, 소통컴퍼니 소프트웨어 개발자</li>
+                                        <li>블록체인 이더리움 개발자</li>
+                                        <li>스마트락 SW보안 개발자</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="name">권도연</p>
+                        <p class="position">서비스개발팀장</p>
+                    </li>
+                    <li>
+                        <div class="profile">
+                            <p class="img"><img src="images/img_team_08.jpg" alt=""></p>
+                            <div class="cont">
+                                <div>
+                                    <ul>
+                                        <li>코핀 커뮤니케이션즈 팀장</li>
+                                        <li>캐릭터 이모티콘 라이센싱 전문가</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="name">정용훈</p>
+                        <p class="position">IP기획팀장</p>
+                    </li>
+                    <li>
+                        <div class="profile">
+                            <p class="img"><img src="images/img_team_09.jpg" alt=""></p>
+                            <div class="cont">
+                                <div>
+                                    <ul>
+                                        <li>코핀 커뮤니케이션즈 과장</li>
+                                        <li>'아라찌'등 캐릭터 다수 개발</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="name">김소라</p>
+                        <p class="position">디자인팀장</p>
+                    </li>
+		    <li>
+                        <div class="profile">
+                            <p class="img"><img src="images/img_team_05.jpg" alt=""></p>
+                            <div class="cont">
+                                <div>
+                                    <ul>
+                                        <li>소통컴퍼니 디자인 책임자</li>
+                                        <li>그래픽기술자격 1급 샵마스터 자격증 취득</li>
+                                        <li>숭의여자대학 패션디자인학과</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="name">박민애</p>
+                        <p class="position">디자이너</p>
+                    </li>
+
+                    <li>
+                        <div class="profile">
+                            <p class="img"><img src="images/img_team_06.jpg" alt=""></p>
+                            <div class="cont">
+                                <div>
+                                    <ul>
+                                        <li>더리얼컴퍼니 대표</li>
+                                        <li>아트코인 디자인 책임자</li>
+                                        <li>(주)하이씨씨 디자인 책임자</li>
+                                        <li>파슨스 디자인스쿨 커뮤니케이션 디자인</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="name">김나영</p>
+                        <p class="position">UIUX총괄책임자</p>
+                    </li>
+                    <li>
+                        <div class="profile">
+                            <p class="img"><img src="images/img_team_07.jpg" alt=""></p>
+                            <div class="cont">
+                                <div>
+                                    <ul>
+                                        <li>블록체인스타트업협동조합 총괄 이사</li>
+                                        <li>전 NICE (한국신용정보)</li>
+                                        <li>성균관대학교 경영전문대학원</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="name">강의주</p>
+                        <p class="position">홍보팀장</p>
+                    </li>
+                    <!-- <li>
+                        <div class="profile">
+                            <p class="img"><img src="images/img_team_10.jpg" alt=""></p>
+                            <div class="cont">
+                                <div>
+                                    <ul>
+                                        <li>블록체인스타트업협동조합 대외 이사</li>
+                                         <li>일한 합작회사 기술개발파트 선임연구원</li>
+                                        <li>SCI 급 논문 1 저자로 눈문 게재</li>
+                                        <li>한양대학교 공과대학원</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="name">Choi Andy</p>
+                        <p class="position">대외팀장</p>
+                    </li> -->
+		    <li>
+			<div class="profile">
+			   <p class="img"><img src="images/img_team_11.jpg" alt=""></p>
+			   <div class="cont">
+				   <div>
+				      <ul>
+					<li>유안타증권 FA 팀장</li>
+					<li>블록체인브라더스 대표</li>
+					<li>서울경제 ∙ 이데일리TV 패널<li>
+					<li>블록체인 교육 / 컨설팅<li>
+				      </ul>
+				   </div>
+				</div>
+			</div>
+			<p class="name">신재흥</p>
+			<p class="position">전략기획팀장</p>
+		    </li>
+	<li>
+	  <div class="profile">
+	  <p class="img"><img src="images/img_team_13.jpg" alt=""></p>
+	    <div class="cont">
+	      <div>
+	        <ul>
+	          <li>한국 블록체인 교육협회 대표</li>
+	          <li>국제암호화폐 전문지도사 양성원 대표</li>
+	          <li>블록체인 투데이 칼럼니스트</li>
+	          <li>전 공무원 교육업체 ST유니티스 전문트레이더</li>
+	        </ul>
+	      </div>
+	    </div>
+	  </div>
+	  <p class="name">김재욱</p>
+	  <p class="position">총괄기획책임자</p>
+	</li>	
+                </ul>
+            </div>
+        </section>
+        <section id="section7">
+            <div class="sectionGroup ta_c">
+                <h4 class="title">자문단</h4>
+                <ul class="teamList">
+                   <li>
+                        <div class="profile">
+                            <p class="img"><img src="images/img_ad_05.jpg" alt=""></p>
+                            <div class="cont">
+                                <div>
+                                    <ul>
+                                        <li>디지털금융연구소 소장- 블록체인과 토큰평가연구 정책자문</li>
+                                        <li>고려대학교 기술경영대학원 겸임교수 </li>
+                                        <li>전 한국은행, NICE 평가정보 CB연구소장</li>
+                                        <li>전 하나금융경영연구소 전략기획실장</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="name">문영배</p>
+                        <p class="position"></p>
+                    </li>
+                    <li>
+                        <div class="profile">
+                            <p class="img"><img src="images/img_ad_06.jpg" alt=""></p>
+                            <div class="cont">
+                                <div>
+                                    <ul>
+                                        <li>(주)블록체인투자연구소장</li>
+                                        <li>전 고려대학교 기술경영대학원 겸임교수</li>
+                                        <li>전 우정사업본부 펀드 팀장</li>
+                                        <li>전 유진자산운용 대체투자본부장</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="name">송인규</p>
+                        <p class="position"></p>
+                    </li>
+                    <li>
+                        <div class="profile">
+                            <p class="img"><img src="images/img_ad_02.jpg" alt=""></p>
+                            <div class="cont">
+                                <div>
+                                    <ul>
+                                        <li>전국경제인연합회 멘토단 위원장</li>
+                                        <li>EBS 한국교육방송공사 시청자위원회심의위원</li>
+                                        <li>전 KT 경영연구소 선임연구원</li>
+                                        <li>전 KT Skylife 마케팅본부장</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="name">문대현</p>
+                        <p class="position"></p>
+                    </li>
+                    <li>
+                        <div class="profile">
+                            <p class="img"><img src="images/img_ad_03.jpg" alt=""></p>
+                            <div class="cont">
+                                <div>
+                                    <ul>
+                                        <li>블록체인 브라더스 대표 SBN 부대표 코인플러스 거래소 운영</li>
+                                        <li>전 ㈜녹십자 자금부 신한금융투자 본점 영업부 차장</li>
+                                        <li>전 한국생산성본부 법정관리과정 M&A 전임강사<li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="name">박만규</p>
+                        <p class="position"></p>
+                    </li>
+                    <li>
+                        <div class="profile">
+                            <p class="img"><img src="images/img_ad_04.jpg" alt=""></p>
+                            <div class="cont">
+                                <div>
+                                    <ul>
+                                        <li>BCS 블록체인시큐리티 대표 모파스랩 </li>
+                                        <li>화이트해커 교육 및 클라우드소싱</li>
+                                        <li>영남이공대학교 사이버보안학과 겸임교수</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="name">기태현</p>
+                        <p class="position"></p>
+                    </li>
+                    <li>
+                        <div class="profile">
+                            <p class="img"><img src="images/img_ad_07.jpg" alt=""></p>
+                            <div class="cont">
+                                <div>
+                                    <ul>
+                                        <li>일본AT&C CEO</li>
+                                        <li>알파넷 테크노로지 수석투자전략가 겸CFO</li>
+                                        <li>다수의 블록체인 스타트업 어드바이져 경험</li>
+                                        <li>외자계 금융 IT회사의 해외 컨설팅경험</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="name">오세용</p>
+                        <p class="position"></p>
+                    </li>
+                    <li>
+                        <div class="profile">
+                            <p class="img"><img src="images/img_ad_01.jpg" alt=""></p>
+                            <div class="cont">
+                                <div>
+                                    <ul>
+                                        <li>한국반려동물산업협회장 겸 나누고 대표</li>
+                                        <li>중국 가목사 대학교 국제교류학</li>
+                                        <li>연세대 창업대학원 창업학과</li>
+                                        <li>전 미래부 한국우편사업진흥원</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="name">서귀동</p>
+                        <p class="position"></p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section id="section8" class="themeBG2">
+           	<h3 class="blind">파트너사 영역</h3>
+           	<div class="sectionGroup">
+				<ul class="partner">
+					<li><img src="images/img_partner1.png" alt="Remark"></li>
+					<li><img src="images/img_partner2.png" alt="copixel"></li>
+					<li><img src="images/img_partner3.png" alt="remotestudio"></li>
+					<li><img src="images/img_partner4.png" alt="파트너사4"></li>
+					<li><img src="images/img_partner5.png" alt="파트너사4"></li>
+					<li><img src="images/img_partner6.png" alt="파트너사4"></li>
+				</ul>
+            </div>
+        </section>
+        <section id="section9" class="themeBG">
+            <div class="sectionGroup">
+                <div class="box">
+                   	<div class="intro">
+						<h4 class="title">로열티코인과 함께하세요</h4>
+						<p class="cont">세계적인 콘텐츠 작품에<br class="mobileShow2"> 투자할 기회를 잡으세요!</p>
+						<p class="btnMore"><a href="#nextPage" onclick="javascript:openJoin(); return false;" class="themeBG">지금 참여하기</a></p>
+                    </div>
+                    <div class="join" style="display:none">
+						<h4 class="title mb0">로열티코인과 함께하세요</h4>
+                   		<form action="">
+                   			<ul class="form-list">
+                   				<li><input type="text" name="contact_name" id="contact_name" class="form-ele" placeholder="이름" title="이름 입력"></li>
+                   				<li><input type="text" name="contact_phone" id="contact_phone" class="form-ele" placeholder="연락처" title="연락처 입력"></li>
+                   				<li><input type="text" name="contact_email" id="contact_email" class="form-ele" placeholder="이메일" title="이메일 입력"></li>
+                   			</ul>
+                   			<p class="btnMore"><a href="#" class="themeBG">지금 참여하기</a></p>
+                   		</form>
+                    </div>
+                </div>
+                <ul class="person">
+                    <li class="mobileHide2">
+                        <p class="tit">HELLO</p>
+                        <p class="img"><img src="images/img_person1.png" alt=""></p>
+                    </li>
+                    <li class="mobileHide2">
+                        <p class="tit">WE'RE</p>
+                        <p class="img"><img src="images/img_person2.png" alt=""></p>
+                    </li>
+                    <li>
+                        <p class="tit"><span class="mobileShow2">HELLO WE'RE ROYALTY COIN</span> <span class="mobileHide2">ROYALTY COIN</span></p>
+                        <p class="img"><img src="images/img_person3.png" alt=""></p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <footer id="footer">
+        <div class="footerInner">
+            <ul class="sns">
+                <li><a href="https://t.me/royaltycoin" class="tele" title="텔레그램 바로가기"><span class="blind">텔레그램</span></a></li>
+                <li><a href="https://band.us/@ant337" class="band" title="밴드 바로가기"><span class="blind">밴드</span></a></li>
+                <li><a href="https://cafe.naver.com/royaltycoin" class="cafe" title="카페 바로가기"><span class="blind">카페</span></a></li>
+                <li><a href="https://twitter.com/@royaltycoin" class="twitter" title="트위터 바로가기"><span class="blind">트위터</span></a></li>
+                <li><a href="https://open.kakao.com/o/gmacyIU" class="kakao" title="카카오톡 오픈채팅 바로가기"><span class="blind">카카오톡 오픈채팅</span></a></li>
+                <li><a href="https://www.facebook.com/RoyaltyCoin/" class="facebook" title="페이스북 바로가기"><span class="blind">페이스북</span></a></li>
+                <li><a href="https://medium.com/@royalticoin" class="medium" title="미디엄 바로가기"><span class="blind">미디엄</span></a></li>
+            </ul>
+            <h3 class="ft_logo"><img src="images/ft_logo.png" alt="로얄티코인"></h3>
+            <cite>ⓒ 2018 royalty group All rights reserved</cite>
+        </div>
+    </footer>
+</div>
+
+<!-- popup -->
+<div class="popupWrap">
+	<a href="#popupClose" onclick="javascript:popupClose(); return false;" class="blackBG popBG"><span class="blind">팝업닫기</span></a>
+	
+	<!-- 로그인 팝업 -->
+	<div class="popup" id="pop_login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="inner" role="document">
+			<h4 class="title mb0">로그인</h4>
+			<form action="">
+				<ul class="form-list">
+					<li><input type="text" name="email" id="email" class="form-ele" placeholder="이메일" title="이메일 입력"></li>
+					<li><input type="password" name="password" id="password" class="form-ele" placeholder="비밀번호" title="비밀번호 입력"></li>
+				</ul>
+        <button type="submit" class="btnArea btnMore themeBG ybtn"><span class="themeBG">로그인</span></button>
+        <p class="desc padtop3"><a href="" data-toggle="modal" data-target="#signup">><u>회원이 아니신가요? 회원가입</u></a></p>
+			</form>
+			<p class="btnClose"><a href="#popupClose" onclick="javascript:popupClose(); return false;"><img src="images/btn_menu_close.png" alt="팝업닫기"></a></p>
+		</div>
+	</div>
+	
+	<!-- 회원가입 팝업 -->
+	<div class="popup" id="pop_join" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="inner" role="document">
+			<h4 class="title mb0">회원가입</h4>
+			<form action="/signup" method="post">
+				<ul class="form-list">
+					<li class="chk">
+						<input type="text" name="email" id="email" class="form-ele" placeholder="이메일" title="이메일 입력">
+						<p><a href="#overlapChk" class="btnChk">중복확인</a></p>	
+					</li>
+					<li><input type="password" name="password" id="password" class="form-ele" placeholder="비밀번호" title="비밀번호 입력"></li>
+					<!-- <li><input type="password" name="join_pass2" id="join_pass2" class="form-ele" placeholder="비밀번호 확인" title="비밀번호 확인 입력"></li> -->
+					<li><input type="text" name="name" id="name" class="form-ele" placeholder="이름" title="이름 입력"></li>
+					<li><input type="text" name="phone" id="phone" class="form-ele" placeholder="연락처" title="연락처 입력"></li>
+        </ul>
+        <button type="submit" class="btnArea btnMore themeBG ybtn"><span class="themeBG">회원가입</span></button>
+				<!-- <p class="btnArea btnMore"><a href="#join" onclick="javascript:popupOpen('pop_cmp'); return false;" class="themeBG">회원가입</a></p> -->
+			</form>
+			<p class="btnClose"><a href="#popupClose" onclick="javascript:popupClose(); return false;"><img src="images/btn_menu_close.png" alt="팝업닫기"></a></p>
+		</div>
+	</div>
+	
+	<!-- 가입완료 팝업 -->
+	<div class="popup" id="pop_cmp">
+		<div class="inner">
+			<h4 class="title mb0">가입이 완료되었습니다</h4>
+			<p class="btnArea btnMore"><a href="#login" onclick="javascript:popupOpen('pop_login'); return false;" class="themeBG">로그인</a></p>
+			<p class="btnClose"><a href="#popupClose" onclick="javascript:popupClose(); return false;"><img src="images/btn_menu_close.png" alt="팝업닫기"></a></p>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+<!-- 로그인 모달 부분 -->
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form action="/login" method="post">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="alcenter te2 mb0 tebold">로그인</h4>
+                </div>
+
+                <div class="modal-body inner">
+                    <ul class="form-list">
+                      <li>
+                        <label for="inputEmail" class="sr-only">이메일</label>
+                        <input type="email" id="email" name="email" class="form-control form-ele" placeholder="이메일" required="">
+                      </li>
+                      <li>
+                        <label for="inputPassword" class="sr-only">비밀번호</label>
+                        <input type="password" id="password" name="password" class="form-control form-ele" placeholder="비밀번호" required="">
+                      </li>
+                    </ul>
+                </div>
+                <div class="modal-footer"  style="text-align: center;">
+                    <button type="submit" class="btnArea btnMore themeBG ybtn"><span class="themeBG">로그인</span></button>
+                    <p class="desc padtop3"><a href="" data-toggle="modal" data-target="#signup">><u>회원이 아니신가요? 회원가입</u></a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- 회원가입 모달 부분 -->
+    <div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <form action="/signup" method="post">
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                      <h4 class="alcenter te2 mb0 tebold">회원가입</h4>
+                  </div>
+                  
+                  <div class="modal-body inner">
+                      
+                    <ul class="form-list">
+                    <li>
+                      <label for="inputEmail" class="sr-only">이메일</label>
+                      <input type="email" id="email" name="email" class="form-control form-ele" placeholder="이메일" required="">
+                    </li>
+                    <li>
+                      <label for="inputPassword" class="sr-only">비밀번호</label>
+                      <input type="password" id="password" name="password" class="form-control form-ele" placeholder="비밀번호" required="">
+                    </li>
+                    <!-- <li>
+                      <label for="inputPassword" class="sr-only">비밀번호확인</label>
+                      <input type="password" id="password" name="password" class="form-control form-ele" placeholder="비밀번호 확인" required="">
+                    </li>     -->
+                    <li>      
+                      <label for="inputName" class="sr-only">이름</label>
+                      <input type="text" id="name" name="name" class="form-control form-ele" placeholder="이름" required="">
+                    </li>      
+                    <li>
+                      <label for="inputPhone" class="sr-only">전화번호</label>
+                      <input type="text" id="phone" name="phone" class="form-control form-ele" placeholder="연락처" required="">
+                    </li>          
+                    </ul>
+
+                  </div>
+                  <div class="modal-footer"  style="text-align: center;">
+                      <button type="submit" class="btnArea btnMore themeBG ybtn"><span class="themeBG">회원가입</span></button>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+//네비게이션이벤트
+function goSection(num, id){
+	var mChk = ($("#wrap").width() > 1024) ? true : false;
+    var $gnb = (mChk) ? $("#gnb") : $("#mGnb");
+	var $this = $gnb.children().eq(num).children("a");
+	if(!$this.hasClass("on")){
+		var top = Math.ceil($(id).offset().top - $("#header").height()); //픽스된 헤더만큼 빼줌
+		$gnb.find("a").removeClass("on");
+		$this.addClass("on");
+		$("html, body").stop().animate({
+			scrollTop : top
+		},700);	
+		if(!mChk){
+			$(".blackBG").fadeOut(300);
+			$("#mGnbWrap").fadeOut(300);
+		}
+	}
+    return false;
+}
+//힘께 참여하세요 페이지 넘기는 이벤트
+function openJoin(){
+	$("#section9 .intro").hide();
+	$("#section9 .join").fadeIn(400);
+	return false;
+}
+//popup
+var popTop = 0;
+function popupClose(){
+	$(".popBG").fadeOut(300);
+	$(".popup").fadeOut(300);
+	$(".popupWrap").fadeOut(300);
+	$("#wrap").removeClass("fixed").removeClass("ok").css("top","inherit");
+	$("html, body").scrollTop(popTop);
+	return false;
+}	
+function popupOpen(name){
+	popTop = $("html").scrollTop() || $("body").scrollTop();
+	$("#wrap").addClass("fixed").css("top",-popTop + "px");
+	if(popTop >= 150){
+		$("#wrap").addClass("ok");
+		setTimeout(function(){
+			$("#header").addClass("fixed move");
+		},50);
+	}
+	$(".popupWrap").show();
+	$(".popBG").fadeIn(300);
+	$(".popup").hide();
+	$("#" + name).stop().fadeIn(300);
+	return false;
+}
+	
+$(function(){
+    var $gnb = ($("#wrap").width() > 1024) ? $("#gnb") : $("#mGnb");
+	var headerH = $("#header").height();
+	var $mGnbWrap = $("#mGnbWrap");
+	var $bg = $("#wrap .blackBG");
+	$("#mobileMenuOpen").click(function(){
+		mGnbOpen();
+		return false;
+	});
+	$("#mobileMenuClose").click(function(){
+		mGnbClose();
+		return false;
+	});
+	$bg.click(function(){
+		mGnbClose();
+		return false;
+	});
+	function mGnbOpen(){
+		$bg.fadeIn(300);
+		$mGnbWrap.fadeIn(300);
+	}
+	function mGnbClose(){
+		$bg.fadeOut(300);
+		$mGnbWrap.fadeOut(300);
+	}
+    //스크롤이벤트
+    var timer1 = 0;
+    var $roadMap = $(".roadMap");
+    var $person = $(".person");
+    var roadMapTop = $roadMap.parent().offset().top - ($roadMap.parent().outerHeight() / 3);
+    var personTop = $person.parent().offset().top - ($person.parent().outerHeight() / 3);
+    eventRe($roadMap);
+    eventRe($person);
+    //섹션 별 on/off
+    var top1 = $("#section3").offset().top;
+    var top2 = $("#section4").offset().top;
+    var top3 = $("#section5").offset().top;
+    var top4 = $("#section6").offset().top;
+    var top5 = $("#section9").offset().top;
+    $(window).scroll(function(){
+        var top = $("html").scrollTop() || $("body").scrollTop();
+        var $header = $("#header");
+        if(top >= 150 && timer1 == 0){
+            timer1 = 1;
+            $header.addClass("fixed")
+            setTimeout(function(){
+                $header.addClass("move");
+            },200)
+        }else if(top < 150 && timer1 == 1){
+            $header.removeClass();
+            timer1 = 0;
+        }
+        
+        //로드맵
+        if(top >= roadMapTop && !$roadMap.hasClass("ev")){
+            eventPlay($roadMap, 250);
+        }else if(top < roadMapTop && $roadMap.hasClass("ev")){
+            eventRe($roadMap);
+        }
+        
+        //사람 캐릭터
+        if(top >= personTop && !$person.hasClass("ev")){
+            eventPlay($person, 400);
+        }else if(top < personTop && $person.hasClass("ev")){
+            eventRe($person);
+        }
+        
+        //섹션 별 on/off
+        if(top >= Math.ceil(top1 - headerH) && top < Math.ceil(top2 - headerH)) gnbOnOff(0);
+        else if(top >= Math.ceil(top2 - headerH) && top < Math.ceil(top3 - headerH)) gnbOnOff(1);
+        else if(top >= Math.ceil(top3 - headerH) && top < Math.ceil(top4 - headerH)) gnbOnOff(2);
+        else if(top >= Math.ceil(top4 - headerH) && top < Math.ceil(top5 - headerH)) gnbOnOff(3);
+        else if(top >= Math.ceil(top5 - headerH)) gnbOnOff(4);
+        else $gnb.find("a").blur().removeClass("on");
+    });
+    
+    function eventPlay($obj, time){
+		var num = 0;
+        $obj.addClass("ev");
+        $obj.children().each(function(e){
+            var $this = $(this);
+            setTimeout(function(){
+                $this.addClass("on");    
+            },num*time);
+			if($this.css("display") != "none") num++;
+        });
+    }
+    
+    function eventRe($obj){
+        $obj.children().removeClass("on");
+        $obj.removeClass("ev");
+    }
+    
+    function gnbOnOff(num){
+        $gnb.find("a").blur().removeClass("on");
+        $gnb.children().eq(num).children("a").addClass("on");
+    }
+    
+    //언어선택 메뉴 오픈이벤트
+    var $select = $(".lang > a");
+    $select.each(function(){
+        var $this = $(this);
+        var $box = $this.siblings(".box");
+        $this.click(function(){
+            if($this.hasClass("on")){
+                $box.fadeOut(300,function(){
+                    $this.removeClass("on");
+                });
+            }else{
+                $box.fadeIn(300);
+                $this.addClass("on");
+            }
+            return false;
+        });
+    });
+	
+	//리사이즈 이벤트
+	var reTimer = 0;
+    $(window).resize(function(){
+		var width = $("#wrap").width();
+        if(width > 1024 && reTimer == 0){
+			reTimer = 1;
+            $gnb = $("#gnb");
+			headerH = $("#header").outerHeight();
+        }
+        else if(width <= 1024 && reTimer == 1) {
+            $gnb = $("#mGnb");  
+			headerH = $("#header").outerHeight();
+			reTimer = 0;
+        } 
+		top1 = $("#section3").offset().top;
+    	top2 = $("#section4").offset().top;
+    	top3 = $("#section5").offset().top;
+    	top4 = $("#section6").offset().top;
+    	top5 = $("#section9").offset().top;
+    });
+});    
+</script>
+</body>
+</html>

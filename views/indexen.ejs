@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ROYALTYCOIN</title>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- style -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+<ul class="skip">
+    <li><a href="#content">내용 바로가기</a></li>
+    <li><a href="#gnb">주메뉴 바로가기</a></li>
+</ul>
+<div id="wrap">
+    <a href="#close" class="blackBG themeBG"><span class="blind">모바일 메뉴 닫기</span></a>
+    <header id="header">
+        <h1 id="logo"><a href="/"><img src="images/logo.png" alt="로얄티코인"></a></h1>
+        <ul class="sitemenu clearfix">
+                <% if(isAuthenticated){ %>
+                    <li class="mobileHide usersty"><u><%= user.name %></u> 님</li>
+                    <li class="mobileHide"><a href="/logout">logout</a></li>
+                    <% } else { %>
+                  <li class="mobileHide"><a href="" data-toggle="modal" data-target="#login">login</a></li>
+                  <!-- <li class="mobileHide"><a href="#login" onclick="javascript:popupOpen('pop_login'); return false;">login</a></li> -->
+                  <li class="mobileHide"><a href="" data-toggle="modal" data-target="#signup">register</a></li>
+                  <!-- <li class="mobileHide"><a href="#join" onclick="javascript:popupOpen('pop_join'); return false;">register</a></li> -->
+                  <% } %>
+            <li class="lang"><a href="#">English</a>
+                <div class="box">
+                    <ul>
+                        <li><a href="/">한국어</a></li>
+                        <li><a href="/en">English</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="mobileShow"><a href="#" id="mobileMenuOpen"><img src="images/btn_menu_open.png" alt="모바일 메뉴 열기"></a></li>
+        </ul>
+        <ul id="gnb" class="mobileHide">
+            <li><a href="#move" onclick="javascript:goSection(0, '#section3'); return false;">ABOUT</a></li>
+            <li><a href="#move" onclick="javascript:goSection(1, '#section4'); return false;">WHITE PAPER</a></li>
+            <li><a href="#move" onclick="javascript:goSection(2, '#section5'); return false;">ROAD MAP</a></li>
+            <li><a href="#move" onclick="javascript:goSection(3, '#section6'); return false;">TEAM</a></li>
+            <li><a href="#move" onclick="javascript:goSection(4, '#section9'); return false;">CONTACT US</a></li>
+        </ul>
+    </header>
+    <nav id="mGnbWrap">
+        <div class="box">
+            <h2 class="logo"><a href="/"><img src="images/logo.png" alt="로얄티코인"></a></h2>
+            <ul id="mGnb">
+                <li><a href="#move" onclick="javascript:goSection(0, '#section3'); return false;">ABOUT</a></li>
+				<li><a href="#move" onclick="javascript:goSection(1, '#section4'); return false;">WHITE PAPER</a></li>
+				<li><a href="#move" onclick="javascript:goSection(2, '#section5'); return false;">ROAD MAP</a></li>
+				<li><a href="#move" onclick="javascript:goSection(3, '#section6'); return false;">TEAM</a></li>
+				<li><a href="#move" onclick="javascript:goSection(4, '#section9'); return false;">CONTACT US</a></li>
+            </ul>
+            <ul class="utilmenu">
+                    <% if(isAuthenticated){ %>
+                        <li class="usersty"><u><%= user.name %></u> 님</li>
+                        <li><a href="/logout">logout</a></li>
+                        <% } else { %>
+                      <!-- <li><a href="" data-toggle="modal" data-target="#login">로그인</a></li> -->
+                      <li><a href="" data-toggle="modal" data-target="#login">login</a></li>
+                      <!-- <li><a href="#login" onclick="javascript:popupOpen('pop_login'); return false;">login</a></li> -->
+                      <li><a href="" data-toggle="modal" data-target="#signup">register</a></li>
+                      <!-- <li class="mobileHide"><a href="#join" onclick="javascript:popupOpen('pop_join'); return false;">register</a></li> -->
+                      <% } %>
+            </ul>
+            <p class="btnClose"><a href="#" id="mobileMenuClose"><img src="images/btn_menu_close.png" alt="모바일 메뉴 닫기"></a></p>
+        </div>
+    </nav>
+    <div id="content">
+        <section id="section1" class="themeBG">
+           	<h3 class="blind">슬로건 영역</h3>
+            <div class="sectionGroup">
+                <p class="slogun en">Imagination Sharing</p>
+                <p class="slogun en themeFC">Multiply Value</p>
+                <ul class="txtList en">
+                    <li>Character of Imagination</li>
+                    <li>Fairly Rewarded</li>
+                    <li>Fair Use</li>
+                </ul>
+                <p class="btnMore"><a href="#move" onclick="javascript:goSection(0, '#section3'); return false;" class="themeBG2">more</a></p>
+            </div>
+        </section>
+        <section id="section2">
+            <div class="sectionGroup ta_c">
+                <p class="cloud cloud1"><img src="images/img_cloud1.png" alt=""></p>
+                <p class="cloud cloud2"><img src="images/img_cloud2.png" alt=""></p>
+                <p class="cloud cloud3"><img src="images/img_cloud3.png" alt=""></p>
+                <p class="cloud cloud4"><img src="images/img_cloud4.png" alt=""></p>
+                
+                <h4 class="title">Global content market is <br class="mobileShow2"><span class="themeFC">changing</span></h4>
+                <p class="cont">
+                We offer a market for creator’s rights and Customer's peace of mind.
+                </p>
+            </div>
+        </section>
+        <section id="section3">
+            <div class="sectionGroup ta_c">
+                <h4 class="title">Distribution ecosystem changed by <span class="themeFC">Royalty Coin</span></h4>
+<!--                <p class="cont">로열티코인은 창작자와 소비자, 투자자 모두에게<br>실질적인 도움을 줄 것 입니다.</p>-->
+                <ul class="circleList">
+                    <li>
+                        <p class="img"><img src="images/img_character1.png" alt="투명성"></p>
+                        <p class="tit">Transparency</p>
+                        <p class="cont">Records in the block chain to<br>guarantee tamperproof copyright trust</p>
+                    </li>
+                    <li>
+                        <p class="img"><img src="images/img_character2.png" alt="공정성"></p>
+                        <p class="tit">Fairness</p>
+                        <p class="cont">Distribute revenue fairly according to<br class="mobileHide2"> activities contributing to promotion<br class="mobileHide2"> and distribution</p>
+                    </li>
+                    <li>
+                        <p class="img"><img src="images/img_character3.png" alt="효율성"></p>
+                        <p class="tit">Efficiency</p>
+                        <p class="cont">Contracts without arbitrators reduce<br class="mobileHide2"> transaction time and distribution costs</p>
+                    </li>
+                </ul>
+                <div class="box">
+                    <p class="img mobileHide2"><img src="images/img_table_en.png" alt=""></p>
+                    <p class="img mobileShow2"><img src="images/img_table_m_en.png" alt=""></p>
+                    <ul class="dotList en">
+                        <li>The creator is copyrighted by recording content information in the block chain</li>
+                        <li>Buyers can purchase coins to highlight products and use them in promotional materials</li>
+                        <li>Contributors are rewarded with coin by evaluating, promoting and distributing content</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="section4">
+            <div class="left">
+                <ul>
+                    <li>
+                        <a href="static/royaltycoin_whitepaper_2.0.pdf" download>
+                            <p class="ico"><img src="images/ico_paper.png" alt=""></p>
+                            <h5>White paper</h5>
+                            <p>Korean</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <p class="ico"><img src="images/ico_paper.png" alt=""></p>
+                            <h5>White paper</h5>
+                            <p>English</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="right">
+                <ul>
+                    <li>
+                        <a href="static/royaltycoin_summary_1.8.pdf" download>
+                            <p class="ico"><img src="images/ico_summary.png" alt=""></p>
+                            <h5>Summary</h5>
+                            <p>Korean</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <p class="ico"><img src="images/ico_summary.png" alt=""></p>
+                            <h5>Summary</h5>
+                            <p>English</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section id="section5" class="ta_c">
+            <h4 class="title">Road Map</h4>
+            <ul class="roadMap">
+                <li>
+                    <dl>
+                        <dt>2018 Q2</dt>
+                        <dd>Established Royalty Group</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>2018 Q3</dt>
+                        <dd>Character Stock Beta Launching</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>2018 Q4</dt>
+                        <dd>Distribution of Royalty token/Pre sale</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>2019 Q1</dt>
+                        <dd>Public sale of Royalty token</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>2019 Q2</dt>
+                        <dd>Develop Royalty Token Dapp</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>2019 Q3</dt>
+                        <dd>R store beta scheduled</dd>
+                    </dl>
+                </li>
+            </ul>
+        </section>
+        <section id="section6">
+            <div class="sectionGroup ta_c">
+                <h4 class="title">Team</h4>
+                <ul class="teamList">
+                    <li class="wid2" style="widtt:20%">
+                        <div class="profile">
+                            <p class="img"><img src="images/img_team_01.jpg" alt=""></p>
+                            <div class="cont">
+                                <div>
+                                    <ul>
+                                        <li>Coffin Communications representative</li>
+                                        <li>Former Goldman Sachs Hong Kong Global Investment Team</li>
+                                        <li>MIT Sloan Master of finance</li>
+                                        <li>Johns Hopkins Master of Biotech</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="name">Yu Yeonghak</p>
+                        <p class="position">Co-Founder</p>
+                    </li>
+                    <li>
+                        <div class="profile">
+                            <p class="img"><img src="images/img_team_02.jpg" alt=""></p>
+                            <div class="cont">
+                                <div>
+                                    <ul>
+                                        <li>CadServe, CEO of Communications Company</li>
+                                        <li>An ant institute operator</li>
+                                        <li>Chairman of the Block Chain-Up Cooperative Federation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="name">Koo Daegeun</p>
+                        <p class="position">Co-Founder</p>
+                    </li>
+                <!--    <li>
+                        <div class="profile">
+                            <p class="img"><img src="images/img_team_03.jpg" alt=""></p>
+                            <div class="cont">
+                                <div>
+                                    <ul>
+                                        <li>오픈블록체인 대표 컨설팅서비스 본부장</li>
+                                        <li>전 오라클 기술세일팀</li>
+                                        <li></li>
+                                        <li>전 한국 아이비엠 소프트웨어 컨설턴트</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="name">윤석빈</p>
+                        <p class="position">최고기술책임자</p>
+                    </li> -->
+               <!--     <li>
+                        <div class="profile">
+                            <p class="img"><img src="images/img_team_man.jpg" alt=""></p>
+                            <div class="cont">
+                                <div>
+                                    <ul>
+                                        <li>소통컴퍼니 개발 이사(블록체인, AI)</li>
+                                        <li>전 미국 알파봇 책임연구원</li>
+                                        <li></li>
+                                        <li>전 삼성에스원 융합보안연구소</li>
+                                        <li>전 연세대학 공과대학, 가천대 산학협력단 책임연구원</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="name">이장형</p>
+                        <p class="position">개발이사</p>
+                    </li> -->
+		    <li>
+	  		<div class="profile">
+	  		<p class="img"><img src="images/img_team_12.jpg" alt=""></p>
+	    		  <div class="cont">
+	      		    <div>
+	        		<ul>
+	          		  <li>Duobule Originals CEO</li>
+	          		  <li>E-Book(ePub) Develop encryption DRM solution</li>
+	          		  <li>P2P Build Bitcoin Wallet</li>
+	          		  <li>P2P Development of VPN Resource Sharing Daemon</li>
+	        		</ul>
+	      		    </div>
+	    		  </div>
+	  		</div>
+	  		<p class="name">Kim Hoeseung</p>
+	  		<p class="position">Block Chain Developer Lead</p>
+		    </li>
+                    <li>
+                        <div class="profile">
+                            <p class="img"><img src="images/img_team_04.jpg" alt=""></p>
+                            <div class="cont">
+                                <div>
+                                    <ul>
+                                        <li>Head of communication company development team</li>
+                                        <li>CadServe, Communication Company Software Developer</li>
+                                        <li>Blockchain Etherium Developer</li>
+                                        <li>Smart Rock SW Security Developer</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="name">Ray Kwon</p>
+                        <p class="position">Service Developer Lead</p>
+                    </li>
+                    <li>
+                        <div class="profile">
+                            <p class="img"><img src="images/img_team_08.jpg" alt=""></p>
+                            <div class="cont">
+                                <div>
+                                    <ul>
+                                        <li>Coffin Communications Team Leader</li>
+                                        <li>Character emoticon licensing expert</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="name">Jeong Yonghun</p>
+                        <p class="position">IP Planning Team Leader</p>
+                    </li>
+                    <li>
+                        <div class="profile">
+                            <p class="img"><img src="images/img_team_09.jpg" alt=""></p>
+                            <div class="cont">
+                                <div>
+                                    <ul>
+                                        <li>Coffin Communications</li>
+                                        <li>Developing a number of characters such as 'Arachie'</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="name">Kim Sora</p>
+                        <p class="position">Design Team Leader</p>
+                    </li>
+		    <li>
+                        <div class="profile">
+                            <p class="img"><img src="images/img_team_05.jpg" alt=""></p>
+                            <div class="cont">
+                                <div>
+                                    <ul>
+                                        <li>Director of Communication Company Design</li>
+                                        <li>Qualifying graphics technology 1st class shopmaster certificate</li>
+                                        <li>Department of Fashion Design at Soong Eui Women's University</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="name">Park Minae</p>
+                        <p class="position">Designer</p>
+                    </li>
+
+                    <li>
+                        <div class="profile">
+                            <p class="img"><img src="images/img_team_06.jpg" alt=""></p>
+                            <div class="cont">
+                                <div>
+                                    <ul>
+                                        <li>Derial Company representative</li>
+                                        <li>Artcoin Design Director</li>
+                                        <li>Mr. Hai, Design Director</li>
+                                        <li>Parsons DesignSchool Communication Design</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="name">Kim Nayeong</p>
+                        <p class="position">UIUX Executive Director</p>
+                    </li>
+                    <li>
+                        <div class="profile">
+                            <p class="img"><img src="images/img_team_07.jpg" alt=""></p>
+                            <div class="cont">
+                                <div>
+                                    <ul>
+                                        <li>Director of the Block Chain-Up Cooperative Federation</li>
+                                        <li>Former NICE (Korea Credit Information)</li>
+                                        <li>Sungkyunkwan University Graduate School of Business</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="name">Kang Uiju</p>
+                        <p class="position">Marketing Leader</p>
+                    </li>
+                    <!-- <li>
+                        <div class="profile">
+                            <p class="img"><img src="images/img_team_10.jpg" alt=""></p>
+                            <div class="cont">
+                                <div>
+                                    <ul>
+                                        <li>블록체인스타트업협동조합 대외 이사</li>
+                                         <li>일한 합작회사 기술개발파트 선임연구원</li>
+                                        <li>SCI 급 논문 1 저자로 눈문 게재</li>
+                                        <li>한양대학교 공과대학원</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="name">Choi Andy</p>
+                        <p class="position">대외팀장</p>
+                    </li> -->
+		    <li>
+			<div class="profile">
+			   <p class="img"><img src="images/img_team_11.jpg" alt=""></p>
+			   <div class="cont">
+				   <div>
+				      <ul>
+					<li>Yuanta Securities FA Team Leader</li>
+					<li>Representative Block Chains Brothers</li>
+					<li>Seoul Economy ∙ Daily TV Panel<li>
+					<li>Blockchain Training / Consulting<li>
+				      </ul>
+				   </div>
+				</div>
+			</div>
+			<p class="name">Shin Jaeheung</p>
+			<p class="position">Strategy Planning Leader</p>
+		    </li>
+	<li>
+	  <div class="profile">
+	  <p class="img"><img src="images/img_team_13.jpg" alt=""></p>
+	    <div class="cont">
+	      <div>
+	        <ul>
+	          <li>Representative of the Korea Block Chain Education Association</li>
+	          <li>CEO of the Center for International Cryptographic Exchange</li>
+	          <li>Blockchain Today columnist</li>
+	          <li>ST Unity Specialist Traitor</li>
+	        </ul>
+	      </div>
+	    </div>
+	  </div>
+	  <p class="name">Kim Jaewook</p>
+	  <p class="position">Product Manager Leader</p>
+	</li>	
+                </ul>
+            </div>
+        </section>
+        <section id="section7">
+            <div class="sectionGroup ta_c">
+                <h4 class="title">Advisor</h4>
+                <ul class="teamList">
+                   <li>
+                        <div class="profile">
+                            <p class="img"><img src="images/img_ad_05.jpg" alt=""></p>
+                            <div class="cont">
+                                <div>
+                                    <ul>
+                                        <li>Director of Digital Finance Research Institute - Block Chain and Token Assessment Policy Advisor</li>
+                                        <li>Professor of Technology and Management at Korea University</li>
+                                        <li>Former Bank of Korea, Head of the NICE Assessment Information CB Laboratory</li>
+                                        <li>Former Chief Strategic Planning Officer of Hana Financial Management Research Institute</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="name">Moon Yeongbae</p>
+                        <p class="position"></p>
+                    </li>
+                    <li>
+                        <div class="profile">
+                            <p class="img"><img src="images/img_ad_06.jpg" alt=""></p>
+                            <div class="cont">
+                                <div>
+                                    <ul>
+                                        <li>(Note) Director of Block Chain Investment Research Institute</li>
+                                        <li>Former Korea University Graduate School of Technology and Business</li>
+                                        <li>Former Korea Post Fund Manager</li>
+                                        <li>Former Senior Director of Eugene Asset Management</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="name">Song Ingyu</p>
+                        <p class="position"></p>
+                    </li>
+                    <li>
+                        <div class="profile">
+                            <p class="img"><img src="images/img_ad_02.jpg" alt=""></p>
+                            <div class="cont">
+                                <div>
+                                    <ul>
+                                        <li>President of the Federation of Korean Industries</li>
+                                        <li>EBS Korea Educational Broadcasting System (KBS) Viewers' Committee</li>
+                                        <li>Former Senior Research Institute of KT</li>
+                                        <li>Former head of KT Skylife Marketing</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="name">Moon Daehyeon</p>
+                        <p class="position"></p>
+                    </li>
+                    <li>
+                        <div class="profile">
+                            <p class="img"><img src="images/img_ad_03.jpg" alt=""></p>
+                            <div class="cont">
+                                <div>
+                                    <ul>
+                                        <li>Operation of the Coin Plus Exchange, vice president of SBN, representing the blockchain Brothers</li>
+                                        <li>Former Green Cross Financial Services Director Shin Han Financial Investment Headquarter</li>
+                                        <li>Former M&A Instructor in Legal Management Process of Korea Productivity Center<li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="name">Park Mangyu</p>
+                        <p class="position"></p>
+                    </li>
+                    <li>
+                        <div class="profile">
+                            <p class="img"><img src="images/img_ad_04.jpg" alt=""></p>
+                            <div class="cont">
+                                <div>
+                                    <ul>
+                                        <li>BCS Block ChainCity Representative Moffaslab </li>
+                                        <li>Whitehacker Training and Cloud Infra</li>
+                                        <li>Professor of Cybersecurity at Youngnam Institute of Technology</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="name">Ki Taehyeon</p>
+                        <p class="position"></p>
+                    </li>
+                    <li>
+                        <div class="profile">
+                            <p class="img"><img src="images/img_ad_07.jpg" alt=""></p>
+                            <div class="cont">
+                                <div>
+                                    <ul>
+                                        <li>CEO of Japan AT&C</li>
+                                        <li>Alphanet Technology Senior Investment Strategy</li>
+                                        <li>Multiple blockchain startup advisor experience</li>
+                                        <li>Experiences in consulting overseas with foreign financial IT companies</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="name">Oh Seyong</p>
+                        <p class="position"></p>
+                    </li>
+                    <li>
+                        <div class="profile">
+                            <p class="img"><img src="images/img_ad_01.jpg" alt=""></p>
+                            <div class="cont">
+                                <div>
+                                    <ul>
+                                        <li>President and CEO of the Korea Pet Industry Association</li>
+                                        <li>International Exchange Studies</li>
+                                        <li>Yonsei University Graduate School of Business</li>
+                                        <li>Former Korea Post Service Promotion Agency</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="name">Seo Gwidong</p>
+                        <p class="position"></p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section id="section8" class="themeBG2">
+           	<h3 class="blind">파트너사 영역</h3>
+           	<div class="sectionGroup">
+				<ul class="partner">
+					<li><img src="images/img_partner1.png" alt="Remark"></li>
+					<li><img src="images/img_partner2.png" alt="copixel"></li>
+					<li><img src="images/img_partner3.png" alt="remotestudio"></li>
+					<li><img src="images/img_partner4.png" alt="파트너사4"></li>
+					<li><img src="images/img_partner5.png" alt="파트너사4"></li>
+					<li><img src="images/img_partner6.png" alt="파트너사4"></li>
+				</ul>
+            </div>
+        </section>
+        <section id="section9" class="themeBG">
+            <div class="sectionGroup">
+                <div class="box">
+                   	<div class="intro">
+						<h4 class="title">Come with the Royalty Coin</h4>
+						<p class="cont">Take the opportunity to invest in world-class content
+</p>
+						<p class="btnMore"><a href="#nextPage" onclick="javascript:openJoin(); return false;" class="themeBG">Join Now</a></p>
+                    </div>
+                    <div class="join" style="display:none">
+						<h4 class="title mb0">Come with the Royal Coin</h4>
+                   		<form action="">
+                   			<ul class="form-list">
+                   				<li><input type="text" name="contact_name" id="contact_name" class="form-ele" placeholder="Name" title="이름 입력"></li>
+                   				<li><input type="text" name="contact_phone" id="contact_phone" class="form-ele" placeholder="Phone" title="연락처 입력"></li>
+                   				<li><input type="text" name="contact_email" id="contact_email" class="form-ele" placeholder="Email" title="이메일 입력"></li>
+                   			</ul>
+                   			<p class="btnMore"><a href="#" class="themeBG">Join Now</a></p>
+                   		</form>
+                    </div>
+                </div>
+                <ul class="person">
+                    <li class="mobileHide2">
+                        <p class="tit">HELLO</p>
+                        <p class="img"><img src="images/img_person1.png" alt=""></p>
+                    </li>
+                    <li class="mobileHide2">
+                        <p class="tit">WE'RE</p>
+                        <p class="img"><img src="images/img_person2.png" alt=""></p>
+                    </li>
+                    <li>
+                        <p class="tit"><span class="mobileShow2">HELLO WE'RE ROYALTY COIN</span> <span class="mobileHide2">ROYALTY COIN</span></p>
+                        <p class="img"><img src="images/img_person3.png" alt=""></p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <footer id="footer">
+        <div class="footerInner">
+            <ul class="sns">
+                <li><a href="https://t.me/royaltycoin" class="tele" title="텔레그램 바로가기"><span class="blind">텔레그램</span></a></li>
+                <li><a href="https://band.us/@ant337" class="band" title="밴드 바로가기"><span class="blind">밴드</span></a></li>
+                <li><a href="https://cafe.naver.com/royaltycoin" class="cafe" title="카페 바로가기"><span class="blind">카페</span></a></li>
+                <li><a href="https://twitter.com/@royaltycoin" class="twitter" title="트위터 바로가기"><span class="blind">트위터</span></a></li>
+                <li><a href="https://open.kakao.com/o/gmacyIU" class="kakao" title="카카오톡 오픈채팅 바로가기"><span class="blind">카카오톡 오픈채팅</span></a></li>
+                <li><a href="https://www.facebook.com/RoyaltyCoin/" class="facebook" title="페이스북 바로가기"><span class="blind">페이스북</span></a></li>
+                <li><a href="https://medium.com/@royalticoin" class="medium" title="미디엄 바로가기"><span class="blind">미디엄</span></a></li>
+            </ul>
+            <h3 class="ft_logo"><img src="images/ft_logo.png" alt="로얄티코인"></h3>
+            <cite>ⓒ 2018 royalty group All rights reserved</cite>
+        </div>
+    </footer>
+</div>
+
+<!-- popup -->
+<div class="popupWrap">
+	<a href="#popupClose" onclick="javascript:popupClose(); return false;" class="blackBG popBG"><span class="blind">팝업닫기</span></a>
+	
+	<!-- 로그인 팝업 -->
+	<div class="popup" id="pop_login">
+		<div class="inner">
+			<h4 class="title mb0">Login</h4>
+			<form action="">
+				<ul class="form-list">
+					<li><input type="text" name="login_email" id="login_email" class="form-ele" placeholder="Email" title="이메일 입력"></li>
+					<li><input type="password" name="login_pass" id="login_pass" class="form-ele" placeholder="Password" title="비밀번호 입력"></li>
+				</ul>
+				<p class="btnArea btnMore"><a href="#login" onclick="javascript:popupClose(); return false;" class="themeBG">Login</a></p>
+				<p class="desc"><a href="#join" onclick="javascript:popupOpen('pop_join'); return false;"><u>New member? Register</u></a></p>
+			</form>
+			<p class="btnClose"><a href="#popupClose" onclick="javascript:popupClose(); return false;"><img src="images/btn_menu_close.png" alt="팝업닫기"></a></p>
+		</div>
+	</div>
+	
+	<!-- 회원가입 팝업 -->
+	<div class="popup" id="pop_join">
+		<div class="inner">
+			<h4 class="title mb0">Register</h4>
+			<form action="">
+				<ul class="form-list">
+					<li class="chk">
+						<input type="text" name="join_email" id="join_email" class="form-ele" placeholder="Email" title="이메일 입력">
+						<p><a href="#overlapChk" class="btnChk">Check</a></p>	
+					</li>
+					<li><input type="password" name="join_pass" id="join_pass" class="form-ele" placeholder="Password" title="비밀번호 입력"></li>
+					<li><input type="password" name="join_pass2" id="join_pass2" class="form-ele" placeholder="Confirm Password" title="비밀번호 확인 입력"></li>
+					<li><input type="text" name="join_name" id="join_name" class="form-ele" placeholder="Name" title="이름 입력"></li>
+					<li><input type="text" name="join_phone" id="join_phone" class="form-ele" placeholder="Phone" title="연락처 입력"></li>
+				</ul>
+				<p class="btnArea btnMore"><a href="#join" onclick="javascript:popupOpen('pop_cmp'); return false;" class="themeBG">Register</a></p>
+			</form>
+			<p class="btnClose"><a href="#popupClose" onclick="javascript:popupClose(); return false;"><img src="images/btn_menu_close.png" alt="팝업닫기"></a></p>
+		</div>
+	</div>
+	
+	<!-- 가입완료 팝업 -->
+	<div class="popup" id="pop_cmp">
+		<div class="inner">
+			<h4 class="title mb0">Registered Successfully</h4>
+			<p class="btnArea btnMore"><a href="#login" onclick="javascript:popupOpen('pop_login'); return false;" class="themeBG">Login</a></p>
+			<p class="btnClose"><a href="#popupClose" onclick="javascript:popupClose(); return false;"><img src="images/btn_menu_close.png" alt="팝업닫기"></a></p>
+		</div>
+	</div>
+</div>
+
+
+
+<!-- 로그인 모달 부분 -->
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form action="/login" method="post">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="alcenter te2 mb0 tebold">Login</h4>
+                    </div>
+    
+                    <div class="modal-body inner">
+                        <ul class="form-list">
+                          <li>
+                            <label for="inputEmail" class="sr-only">email</label>
+                            <input type="email" id="email" name="email" class="form-control form-ele" placeholder="Email" required="">
+                          </li>
+                          <li>
+                            <label for="inputPassword" class="sr-only">password</label>
+                            <input type="password" id="password" name="password" class="form-control form-ele" placeholder="Password" required="">
+                          </li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer"  style="text-align: center;">
+                        <button type="submit" class="btnArea btnMore themeBG ybtn"><span class="themeBG">Login</span></button>
+                        <p class="desc padtop3"><a href="" data-toggle="modal" data-target="#signup">><u>New member? Register</u></a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        <!-- 회원가입 모달 부분 -->
+        <div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                  <form action="/signup" method="post">
+                      <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                          <h4 class="alcenter te2 mb0 tebold">Register</h4>
+                      </div>
+                      
+                      <div class="modal-body inner">
+                          
+                        <ul class="form-list">
+                        <li>
+                          <label for="inputEmail" class="sr-only">email</label>
+                          <input type="email" id="email" name="email" class="form-control form-ele" placeholder="Email" required="">
+                        </li>
+                        <li>
+                          <label for="inputPassword" class="sr-only">password</label>
+                          <input type="password" id="password" name="password" class="form-control form-ele" placeholder="Password" required="">
+                        </li>
+                        <!-- <li>
+                          <label for="inputPassword" class="sr-only">비밀번호확인</label>
+                          <input type="password" id="password" name="password" class="form-control form-ele" placeholder="비밀번호 확인" required="">
+                        </li>     -->
+                        <li>      
+                          <label for="inputName" class="sr-only">name</label>
+                          <input type="text" id="name" name="name" class="form-control form-ele" placeholder="Name" required="">
+                        </li>      
+                        <li>
+                          <label for="inputPhone" class="sr-only">phone</label>
+                          <input type="text" id="phone" name="phone" class="form-control form-ele" placeholder="Phone" required="">
+                        </li>          
+                        </ul>
+    
+                      </div>
+                      <div class="modal-footer"  style="text-align: center;">
+                          <button type="submit" class="btnArea btnMore themeBG ybtn"><span class="themeBG">Register</span></button>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+//네비게이션이벤트
+function goSection(num, id){
+	var mChk = ($("#wrap").width() > 1024) ? true : false;
+    var $gnb = (mChk) ? $("#gnb") : $("#mGnb");
+	var $this = $gnb.children().eq(num).children("a");
+	if(!$this.hasClass("on")){
+		var top = Math.ceil($(id).offset().top - $("#header").height()); //픽스된 헤더만큼 빼줌
+		$gnb.find("a").removeClass("on");
+		$this.addClass("on");
+		$("html, body").stop().animate({
+			scrollTop : top
+		},700);	
+		if(!mChk){
+			$(".blackBG").fadeOut(300);
+			$("#mGnbWrap").fadeOut(300);
+		}
+	}
+    return false;
+}
+//힘께 참여하세요 페이지 넘기는 이벤트
+function openJoin(){
+	$("#section9 .intro").hide();
+	$("#section9 .join").fadeIn(400);
+	return false;
+}
+//popup
+var popTop = 0;
+function popupClose(){
+	$(".popBG").fadeOut(300);
+	$(".popup").fadeOut(300);
+	$(".popupWrap").fadeOut(300);
+	$("#wrap").removeClass("fixed").removeClass("ok").css("top","inherit");
+	$("html, body").scrollTop(popTop);
+	return false;
+}	
+function popupOpen(name){
+	popTop = $("html").scrollTop() || $("body").scrollTop();
+	$("#wrap").addClass("fixed").css("top",-popTop + "px");
+	if(popTop >= 150){
+		$("#wrap").addClass("ok");
+		setTimeout(function(){
+			$("#header").addClass("fixed move");
+		},50);
+	}
+	$(".popupWrap").show();
+	$(".popBG").fadeIn(300);
+	$(".popup").hide();
+	$("#" + name).stop().fadeIn(300);
+	return false;
+}
+	
+$(function(){
+    var $gnb = ($("#wrap").width() > 1024) ? $("#gnb") : $("#mGnb");
+	var headerH = $("#header").height();
+	var $mGnbWrap = $("#mGnbWrap");
+	var $bg = $("#wrap .blackBG");
+	$("#mobileMenuOpen").click(function(){
+		mGnbOpen();
+		return false;
+	});
+	$("#mobileMenuClose").click(function(){
+		mGnbClose();
+		return false;
+	});
+	$bg.click(function(){
+		mGnbClose();
+		return false;
+	});
+	function mGnbOpen(){
+		$bg.fadeIn(300);
+		$mGnbWrap.fadeIn(300);
+	}
+	function mGnbClose(){
+		$bg.fadeOut(300);
+		$mGnbWrap.fadeOut(300);
+	}
+    //스크롤이벤트
+    var timer1 = 0;
+    var $roadMap = $(".roadMap");
+    var $person = $(".person");
+    var roadMapTop = $roadMap.parent().offset().top - ($roadMap.parent().outerHeight() / 3);
+    var personTop = $person.parent().offset().top - ($person.parent().outerHeight() / 3);
+    eventRe($roadMap);
+    eventRe($person);
+    //섹션 별 on/off
+    var top1 = $("#section3").offset().top;
+    var top2 = $("#section4").offset().top;
+    var top3 = $("#section5").offset().top;
+    var top4 = $("#section6").offset().top;
+    var top5 = $("#section9").offset().top;
+    $(window).scroll(function(){
+        var top = $("html").scrollTop() || $("body").scrollTop();
+        var $header = $("#header");
+        if(top >= 150 && timer1 == 0){
+            timer1 = 1;
+            $header.addClass("fixed")
+            setTimeout(function(){
+                $header.addClass("move");
+            },200)
+        }else if(top < 150 && timer1 == 1){
+            $header.removeClass();
+            timer1 = 0;
+        }
+        
+        //로드맵
+        if(top >= roadMapTop && !$roadMap.hasClass("ev")){
+            eventPlay($roadMap, 250);
+        }else if(top < roadMapTop && $roadMap.hasClass("ev")){
+            eventRe($roadMap);
+        }
+        
+        //사람 캐릭터
+        if(top >= personTop && !$person.hasClass("ev")){
+            eventPlay($person, 400);
+        }else if(top < personTop && $person.hasClass("ev")){
+            eventRe($person);
+        }
+        
+        //섹션 별 on/off
+        if(top >= Math.ceil(top1 - headerH) && top < Math.ceil(top2 - headerH)) gnbOnOff(0);
+        else if(top >= Math.ceil(top2 - headerH) && top < Math.ceil(top3 - headerH)) gnbOnOff(1);
+        else if(top >= Math.ceil(top3 - headerH) && top < Math.ceil(top4 - headerH)) gnbOnOff(2);
+        else if(top >= Math.ceil(top4 - headerH) && top < Math.ceil(top5 - headerH)) gnbOnOff(3);
+        else if(top >= Math.ceil(top5 - headerH)) gnbOnOff(4);
+        else $gnb.find("a").blur().removeClass("on");
+    });
+    
+    function eventPlay($obj, time){
+		var num = 0;
+        $obj.addClass("ev");
+        $obj.children().each(function(e){
+            var $this = $(this);
+            setTimeout(function(){
+                $this.addClass("on");    
+            },num*time);
+			if($this.css("display") != "none") num++;
+        });
+    }
+    
+    function eventRe($obj){
+        $obj.children().removeClass("on");
+        $obj.removeClass("ev");
+    }
+    
+    function gnbOnOff(num){
+        $gnb.find("a").blur().removeClass("on");
+        $gnb.children().eq(num).children("a").addClass("on");
+    }
+    
+    //언어선택 메뉴 오픈이벤트
+    var $select = $(".lang > a");
+    $select.each(function(){
+        var $this = $(this);
+        var $box = $this.siblings(".box");
+        $this.click(function(){
+            if($this.hasClass("on")){
+                $box.fadeOut(300,function(){
+                    $this.removeClass("on");
+                });
+            }else{
+                $box.fadeIn(300);
+                $this.addClass("on");
+            }
+            return false;
+        });
+    });
+	
+	//리사이즈 이벤트
+	var reTimer = 0;
+    $(window).resize(function(){
+		var width = $("#wrap").width();
+        if(width > 1024 && reTimer == 0){
+			reTimer = 1;
+            $gnb = $("#gnb");
+			headerH = $("#header").outerHeight();
+        }
+        else if(width <= 1024 && reTimer == 1) {
+            $gnb = $("#mGnb");  
+			headerH = $("#header").outerHeight();
+			reTimer = 0;
+        } 
+		top1 = $("#section3").offset().top;
+    	top2 = $("#section4").offset().top;
+    	top3 = $("#section5").offset().top;
+    	top4 = $("#section6").offset().top;
+    	top5 = $("#section9").offset().top;
+    });
+});    
+</script>
+</body>
+</html>
